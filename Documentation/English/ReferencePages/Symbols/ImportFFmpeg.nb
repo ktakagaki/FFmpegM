@@ -3,17 +3,17 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 8.0' *)
+(* CreatedBy='Mathematica 9.0' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      4723,        141]
-NotebookOptionsPosition[      3206,         96]
-NotebookOutlinePosition[      4527,        133]
-CellTagsIndexPosition[      4484,        130]
+NotebookDataLength[      4658,        136]
+NotebookOptionsPosition[      3172,         93]
+NotebookOutlinePosition[      4495,        130]
+CellTagsIndexPosition[      4452,        127]
 WindowTitle->ImportFFmpeg - Wolfram Mathematica
 WindowFrame->Normal*)
 
@@ -73,8 +73,6 @@ ImportFFmpeg.html"], StandardForm]], "Input", TextClipboardType ->
    "RowsIndexed" -> {}}},
  CellID->1],
 
-Cell[CellGroupData[{
-
 Cell["ImportFFmpeg", "ObjectName",
  CellID->1224892054],
 
@@ -89,8 +87,7 @@ Cell[BoxData[GridBox[{
  GridBoxBackground->{
   "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
    "RowsIndexed" -> {}}},
- CellID->982511436]
-}, Open  ]],
+ CellID->982511436],
 
 Cell[" ", "FooterCell"]
 },
@@ -102,14 +99,14 @@ WindowTitle->"ImportFFmpeg - Wolfram Mathematica",
 TaggingRules->{
  "ModificationHighlight" -> False, 
   "Metadata" -> {
-   "built" -> "{2013, 5, 9, 23, 21, 39.7028299}", "context" -> "FFmpegM`", 
+   "built" -> "{2013, 5, 9, 23, 44, 41.6178710}", "context" -> "FFmpegM`", 
     "keywords" -> {}, "index" -> True, "label" -> "FFmpegM Paclet Symbol", 
     "language" -> "en", "paclet" -> "FFmpegM", "status" -> "None", "summary" -> 
     "ImportFFmpeg[] ImportFFmpeg", "synonyms" -> {}, "title" -> 
     "ImportFFmpeg", "type" -> "Symbol", "uri" -> "FFmpegM/ref/ImportFFmpeg"}, 
   "LinkTrails" -> "", "SearchTextTranslated" -> ""},
 CellContext->"Global`",
-FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[
@@ -118,7 +115,7 @@ StyleDefinitions->Notebook[{
     StyleData["Input"], CellContext -> "Global`"], 
    Cell[
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
-  FrontEndVersion -> "8.0 for Microsoft Windows (64-bit) (October 6, 2011)", 
+  FrontEndVersion -> "9.0 for Microsoft Windows (64-bit) (January 25, 2013)", 
   StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)
@@ -136,13 +133,11 @@ Cell[605, 21, 76, 1, 70, "SymbolColorBar"],
 Cell[684, 24, 180, 5, 70, "LinkTrail"],
 Cell[867, 31, 1869, 42, 70, "AnchorBarGrid",
  CellID->1],
-Cell[CellGroupData[{
-Cell[2761, 77, 55, 1, 70, "ObjectName",
+Cell[2739, 75, 55, 1, 70, "ObjectName",
  CellID->1224892054],
-Cell[2819, 80, 345, 11, 70, "Usage",
- CellID->982511436]
-}, Open  ]],
-Cell[3179, 94, 23, 0, 70, "FooterCell"]
+Cell[2797, 78, 345, 11, 70, "Usage",
+ CellID->982511436],
+Cell[3145, 91, 23, 0, 70, "FooterCell"]
 }
 ]
 *)

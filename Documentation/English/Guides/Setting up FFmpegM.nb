@@ -3,17 +3,17 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 8.0' *)
+(* CreatedBy='Mathematica 9.0' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     16961,        339]
-NotebookOptionsPosition[     15522,        295]
-NotebookOutlinePosition[     16523,        323]
-CellTagsIndexPosition[     16480,        320]
+NotebookDataLength[     17168,        347]
+NotebookOptionsPosition[     15668,        301]
+NotebookOutlinePosition[     16670,        329]
+CellTagsIndexPosition[     16627,        326]
 WindowTitle->Setting up FFmpegM - Wolfram Mathematica
 WindowFrame->Normal*)
 
@@ -42,6 +42,12 @@ Cell["1. Download and Install ffmpeg:", "GuideText",
 
 Cell["     http://ffmpeg.org/download.html", "GuideText",
  CellID->203374175],
+
+Cell["\<\
+     (if you are using a Linux package manager, be sure to install ffprobe as \
+well as ffmpeg)\
+\>", "GuideText",
+ CellID->62291677],
 
 Cell["\<\
 2. The FFmpegM package can be installed by downloading the following github \
@@ -301,13 +307,13 @@ WindowTitle->"Setting up FFmpegM - Wolfram Mathematica",
 TaggingRules->{
  "ModificationHighlight" -> False, 
   "Metadata" -> {
-   "built" -> "{2013, 5, 9, 23, 21, 35.8856116}", "context" -> "FFmpegM`", 
+   "built" -> "{2013, 5, 9, 23, 44, 39.9387749}", "context" -> "FFmpegM`", 
     "keywords" -> {}, "index" -> True, "label" -> "F Fmpeg M Guide", 
     "language" -> "en", "paclet" -> "FFmpegM", "status" -> "None", "summary" -> 
     " ", "synonyms" -> {}, "title" -> "Setting up FFmpegM", "type" -> "Guide",
      "uri" -> "FFmpegM/guide/Setting up FFmpegM"}, "LinkTrails" -> "", 
   "SearchTextTranslated" -> ""},
-FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
   CharacterEncoding -> "ShiftJIS"]
 ]
@@ -333,14 +339,16 @@ Cell[1016, 39, 70, 1, 70, "GuideText",
  CellID->6563834],
 Cell[1089, 42, 77, 1, 70, "GuideText",
  CellID->203374175],
-Cell[1169, 45, 153, 4, 70, "GuideText",
+Cell[1169, 45, 143, 4, 70, "GuideText",
+ CellID->62291677],
+Cell[1315, 51, 153, 4, 70, "GuideText",
  CellID->744909051],
-Cell[1325, 51, 81, 1, 70, "GuideText",
+Cell[1471, 57, 81, 1, 70, "GuideText",
  CellID->317643431],
-Cell[1409, 54, 14071, 236, 70, "GuideText",
+Cell[1555, 60, 14071, 236, 70, "GuideText",
  CellID->237414273]
 }, Open  ]],
-Cell[15495, 293, 23, 0, 70, "FooterCell"]
+Cell[15641, 299, 23, 0, 70, "FooterCell"]
 }
 ]
 *)
