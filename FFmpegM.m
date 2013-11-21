@@ -25,8 +25,8 @@ If[  Head[FFmpegTempDir]=!="String",
 		FFmpegTempDir=$UserBaseDirectory<>"/ApplicationData/FFmpgTmp",
 		FFmpegTempDir=$FFmpegTempDirDefault 	]
 ];
-If[ FileNames[FFmpegTempDir]=={}, CreateDirectory[FFmpegTempDir]];
-If[ FileNames[FFmpegTempDir<>"/*"]!={}, DeleteFile[FileNames[FFmpegTempDir<>"/*"]]];
+(*If[ FileNames[FFmpegTempDir]=={}, CreateDirectory[FFmpegTempDir]];
+If[ FileNames[FFmpegTempDir<>"/*"]!={}, DeleteFile[FileNames[FFmpegTempDir<>"/*"]]];*)
 
 
 FFmpegTempDir::usage="Specify where to keep temporary files.";
@@ -42,11 +42,14 @@ Begin["`Private`"]
 ImportFFmpeg[fileName_String, opts:OptionsPattern[]]:=
 	Block[{dir,files,ret},
 
-		dir=Directory[]; SetDirectory[FFmpegTempDir];
+		If[ FileNames[FFmpegTempDir<>ToString[$KernelID]]=={}, CreateDirectory[FFmpegTempDir<>ToString[$KernelID]]];
+		dir=Directory[]; SetDirectory[FFmpegTempDir<>ToString[$KernelID]];
 		files=FileNames["t*.png"]; DeleteFile[files];
-
-		Run["ffmpeg -i " <> fileName <> " -f image2 "<>
+		
+		Read["!ffmpeg -i " <> fileName <> " -f image2 "<>
 				OptionValue[FFmpegCommandlineOptions]<> " " <>"t%07d.png"];
+(*		Run["ffmpeg -i " <> fileName <> " -f image2 "<>
+				OptionValue[FFmpegCommandlineOptions]<> " " <>"t%07d.png"];*)
 
 		files=FileNames["t*.png"];
 		ret=Import /@ files;
@@ -58,10 +61,12 @@ ImportFFmpeg[fileName_String, opts:OptionsPattern[]]:=
 
 
 ImportFFmpeg[fileName_String, {start_, end_}, opts:OptionsPattern[]]:=
-Block[{dir, tempLog, fps, files, ret},
-	dir=Directory[]; SetDirectory[FFmpegTempDir];
-	files=FileNames["t*.png"]; DeleteFile[files];
-	files=FileNames["t*.png"]; 
+Block[{dir, tempLog, fps, (*files, *)ret},
+
+	If[ FileNames[FFmpegTempDir<>ToString[$KernelID]]=={}, CreateDirectory[FFmpegTempDir<>ToString[$KernelID]]];
+	dir=Directory[]; SetDirectory[FFmpegTempDir<>ToString[$KernelID]];
+	(*files=FileNames["t*.png"]; DeleteFile[files];
+	files=FileNames["t*.png"];*) 
     
     (*Use ffprobe utility to read video file information*)
     Run["ffprobe -show_streams "<>fileName <>" > tempFFmpeg.log"];
@@ -69,7 +74,7 @@ Block[{dir, tempLog, fps, files, ret},
 
     fps = ToExpression[
           StringReplace[tempLog, 
-              (___ ~~ "r_frame_rate=" ~~ x:Except[WhitespaceCharacter]..~~{EndOfLine | WhitespaceCharacter} ~~ ___->x)
+              (Shortest[___] ~~ "r_frame_rate=" ~~ x:Except[WhitespaceCharacter]..~~{EndOfLine | WhitespaceCharacter} ~~ ___->x)
           ]];
 	DeleteFile["tempFFmpeg.log"];
 
@@ -85,6 +90,71 @@ Block[{dir, tempLog, fps, files, ret},
 
 ];
 
+ImportFFmpeg[fileName_String, frame_, opts:OptionsPattern[]]:=
+Block[{dir, tempLog, fps, (*files,*) ret},
+
+	If[ FileNames[FFmpegTempDir<>ToString[$KernelID]]=={}, CreateDirectory[FFmpegTempDir<>ToString[$KernelID]]];
+	dir=Directory[]; SetDirectory[FFmpegTempDir<>ToString[$KernelID]];
+	(*files=FileNames["t*.png"]; DeleteFile[files];
+	files=FileNames["t*.png"];*) 
+    
+    (*Use ffprobe utility to read video file information*)
+    Run["ffprobe -show_streams "<>fileName <>" > tempFFmpeg.log"];
+	tempLog=Import["tempFFmpeg.log", "String"];
+
+    fps = ToExpression[
+          StringReplace[tempLog, 
+              (Shortest[___] ~~ "r_frame_rate=" ~~ x:Except[WhitespaceCharacter]..~~{EndOfLine | WhitespaceCharacter} ~~ ___->x)
+          ]];
+	DeleteFile["tempFFmpeg.log"];
+
+    (*actually import the video file*)
+	ret=ImportFFmpeg[fileName, 
+		Sequence@@Prepend[{opts},
+			FFmpegCommandlineOptions->"-ss "<>ToString[N[frame/fps]]<>" -vframes 1 "
+				<>OptionValue[FFmpegCommandlineOptions]]
+	];
+
+	SetDirectory[dir];
+	ret[[1]]
+
+];
+
+ImportFFmpeg[fileName_String, {frames_List}, opts:OptionsPattern[]]:=
+Block[{dir, tempLog, fps, (*files,*) ret},
+
+	If[ FileNames[FFmpegTempDir<>ToString[$KernelID]]=={}, CreateDirectory[FFmpegTempDir<>ToString[$KernelID]]];
+	dir=Directory[]; SetDirectory[FFmpegTempDir<>ToString[$KernelID]];
+	(*files=FileNames["t*.png"]; DeleteFile[files];
+	files=FileNames["t*.png"];*) 
+    
+    (*Use ffprobe utility to read video file information*)
+    Run["ffprobe -show_streams "<>fileName <>" > tempFFmpeg.log"];
+	tempLog=Import["tempFFmpeg.log", "String"];
+
+    fps = ToExpression[
+          StringReplace[tempLog, 
+              (Shortest[___] ~~ "r_frame_rate=" ~~ x:Except[WhitespaceCharacter]..~~{EndOfLine | WhitespaceCharacter} ~~ ___->x)
+          ]];
+	DeleteFile["tempFFmpeg.log"];
+	(*Print[fps];
+	Print[tempLog];*)
+
+    (*actually import the video file*)
+	ret=Table[
+		ImportFFmpeg[fileName, 
+		Sequence@@Prepend[{opts},
+			FFmpegCommandlineOptions->"-ss "<>ToString[N[frame/fps]]<>" -vframes 1 "
+				<>OptionValue[FFmpegCommandlineOptions]]
+		], {frame,frames}				
+	];
+
+	SetDirectory[dir];
+	Flatten[ret]
+
+];
+
+
 
 ImportFFmpeg[args___]:=Message[ImportFFmpeg::invalidArgs,{args}];
 ImportFFmpeg::invalidArgs="Arguments `1` are invalid!";
@@ -92,8 +162,8 @@ ImportFFmpeg::invalidArgs="Arguments `1` are invalid!";
 
 ExportFFmpeg[fileName_String, manipulate_Manipulate]:=
 	Block[{dir,files},
-		dir=Directory[];
-		SetDirectory[FFmpegTempDir];
+		If[ FileNames[FFmpegTempDir<>ToString[$KernelID]]=={}, CreateDirectory[FFmpegTempDir<>ToString[$KernelID]]];
+		dir=Directory[]; SetDirectory[FFmpegTempDir<>ToString[$KernelID]];
 		
 		Export["t0000001.png", manipulate,"VideoFrames"];
 		Run["ffmpeg -f image2 -i " <> "t%07d.png -c:v libx264 -preset medium " <> fileName <> " "];
@@ -105,8 +175,9 @@ ExportFFmpeg[fileName_String, manipulate_Manipulate]:=
 
 ExportFFmpeg[fileName_String, images_List]:=
 	Block[{dir,files},
-		dir=Directory[];
-		SetDirectory[FFmpegTempDir];
+
+		If[ FileNames[FFmpegTempDir<>ToString[$KernelID]]=={}, CreateDirectory[FFmpegTempDir<>ToString[$KernelID]]];
+		dir=Directory[]; SetDirectory[FFmpegTempDir<>ToString[$KernelID]];
 		
 		Do[
 			Export["t"<>Apply[StringJoin,Map[ToString,IntegerDigits[cnt, 10, 7] ]]<>".png",

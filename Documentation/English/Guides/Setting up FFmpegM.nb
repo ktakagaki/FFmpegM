@@ -3,60 +3,171 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 9.0' *)
+(* CreatedBy='Mathematica 8.0' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     17168,        347]
-NotebookOptionsPosition[     15668,        301]
-NotebookOutlinePosition[     16670,        329]
-CellTagsIndexPosition[     16627,        326]
-WindowTitle->Setting up FFmpegM - Wolfram Mathematica
+NotebookDataLength[     21847,        551]
+NotebookOptionsPosition[     18887,        447]
+NotebookOutlinePosition[     19307,        463]
+CellTagsIndexPosition[     19264,        460]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[" ", "GuideColorBar",
- CellMargins->{{Inherited, Inherited}, {-5, 0}}],
-
 Cell[TextData[{
- ButtonBox["Mathematica",
-  BaseStyle->{"Link", "LinkTrail"},
-  ButtonData->"paclet:FFmpegM/guide/FFmpegM"],
- StyleBox[" > ", "LinkTrailSeparator"]
-}], "LinkTrail"],
+ "New in: ",
+ Cell["0.2", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Guide", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["FFmpegM", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["FFmpegM`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["FFmpegM/guide/Setting up FFmpegM", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1427428552],
+
+Cell["XXXX", "Keywords",
+ CellID->1251852827]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->795394057],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->802101],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->509823116],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->199884516],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->463951815],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->8237523],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->813936640],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
 
 Cell[CellGroupData[{
 
 Cell["Setting up FFmpegM", "GuideTitle",
  CellID->942062912],
 
-Cell["\[NonBreakingSpace]", "GuideAbstract",
- CellID->1],
+Cell["XXXX", "GuideAbstract",
+ CellID->2001916300]
+}, Open  ]],
 
-Cell["1. Download and Install ffmpeg:", "GuideText",
+Cell[CellGroupData[{
+
+Cell["", "GuideFunctionsSection",
+ CellID->1866139230],
+
+Cell["\<\
+1. Download and Install ffmpeg:\
+\>", "GuideText",
+ CellChangeTimes->{{3.577123131300198*^9, 3.5771231416247883`*^9}, {
+  3.577123174029642*^9, 3.577123177932865*^9}},
  CellID->6563834],
 
-Cell["     http://ffmpeg.org/download.html", "GuideText",
+Cell["\<\
+     http://ffmpeg.org/download.html\
+\>", "GuideText",
+ CellChangeTimes->{{3.5771226340077543`*^9, 3.5771226789353237`*^9}, {
+  3.577122721326749*^9, 3.577122765867296*^9}, {3.577123179973982*^9, 
+  3.5771231815660725`*^9}, {3.5771236833587737`*^9, 3.577123684724852*^9}},
  CellID->203374175],
 
 Cell["\<\
      (if you are using a Linux package manager, be sure to install ffprobe as \
 well as ffmpeg)\
 \>", "GuideText",
+ CellChangeTimes->{{3.577123687325001*^9, 3.5771237120774164`*^9}},
  CellID->62291677],
+
+Cell["", "GuideText",
+ CellChangeTimes->{{3.5771231954358664`*^9, 3.577123196482926*^9}},
+ CellID->364238796],
 
 Cell["\<\
 2. The FFmpegM package can be installed by downloading the following github \
 repository, as a zip file:\
 \>", "GuideText",
+ CellChangeTimes->{{3.5771226340077543`*^9, 3.5771226789353237`*^9}, {
+  3.577122721326749*^9, 3.577122827136801*^9}, {3.577122932395821*^9, 
+  3.577122966003743*^9}, {3.5771231211146154`*^9, 3.57712312171865*^9}, {
+  3.577123184032214*^9, 3.5771231876604214`*^9}},
  CellID->744909051],
 
-Cell["     http://github.com/ktakagaki/FFmpegM", "GuideText",
+Cell["\<\
+     http://github.com/ktakagaki/FFmpegM\
+\>", "GuideText",
+ CellChangeTimes->{{3.5771226340077543`*^9, 3.5771226789353237`*^9}, {
+  3.577122721326749*^9, 3.577122827136801*^9}, {3.577122932395821*^9, 
+  3.577122966003743*^9}, {3.5771231211146154`*^9, 3.57712312171865*^9}, {
+  3.577123184032214*^9, 3.5771231876604214`*^9}},
  CellID->317643431],
+
+Cell["", "GuideText",
+ CellChangeTimes->{{3.5771231921706796`*^9, 3.577123193364748*^9}},
+ CellID->9683427],
 
 Cell[BoxData[
  GraphicsBox[
@@ -294,27 +405,50 @@ zjnSQOYnkUgkUpX0/wEoRJu6
   ImageSize->Automatic,
   ImageSizeRaw->{510, 352},
   PlotRange->{{0, 510}, {0, 352}}]], "GuideText",
- CellID->237414273]
+ CellChangeTimes->{3.5771231124871216`*^9},
+ CellID->237414273],
+
+Cell[CellGroupData[{
+
+Cell["\t", "GuideDelimiter",
+ CellID->311258892],
+
+Cell["XXXX . XXXX . ", "InlineGuideFunctionListing",
+ CellID->58033752]
+}, Open  ]]
 }, Open  ]],
 
-Cell[" ", "FooterCell"]
+Cell[CellGroupData[{
+
+Cell["Tutorials", "GuideTutorialsSection",
+ CellID->415694126],
+
+Cell["XXXX", "GuideTutorial",
+ CellID->806871991],
+
+Cell["XXXX", "GuideTutorial",
+ CellID->1885805579]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "GuideMoreAboutSection",
+ CellID->23220180],
+
+Cell["XXXX", "GuideMoreAbout",
+ CellID->1567025153],
+
+Cell["XXXX", "GuideMoreAbout",
+ CellID->252299663]
+}, Open  ]],
+
+Cell["Related Links", "GuideRelatedLinksSection",
+ CellID->415694148]
 },
-Saveable->False,
-ScreenStyleEnvironment->"Working",
-WindowSize->{725, 750},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
-WindowTitle->"Setting up FFmpegM - Wolfram Mathematica",
-TaggingRules->{
- "ModificationHighlight" -> False, 
-  "Metadata" -> {
-   "built" -> "{2013, 5, 9, 23, 44, 39.9387749}", "context" -> "FFmpegM`", 
-    "keywords" -> {}, "index" -> True, "label" -> "F Fmpeg M Guide", 
-    "language" -> "en", "paclet" -> "FFmpegM", "status" -> "None", "summary" -> 
-    " ", "synonyms" -> {}, "title" -> "Setting up FFmpegM", "type" -> "Guide",
-     "uri" -> "FFmpegM/guide/Setting up FFmpegM"}, "LinkTrails" -> "", 
-  "SearchTextTranslated" -> ""},
-FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
-StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+WindowSize->{700, 770},
+WindowMargins->{{417, Automatic}, {Automatic, 69}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "GuidePageStyles.nb", 
   CharacterEncoding -> "ShiftJIS"]
 ]
 (* End of Notebook Content *)
@@ -328,30 +462,99 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[611, 21, 75, 1, 70, "GuideColorBar"],
-Cell[689, 24, 180, 5, 70, "LinkTrail"],
+Cell[557, 20, 325, 14, 22, "History",
+ CellID->1247902091],
 Cell[CellGroupData[{
-Cell[894, 33, 60, 1, 70, "GuideTitle",
+Cell[907, 38, 68, 1, 27, "CategorizationSection",
+ CellID->1122911449],
+Cell[978, 41, 78, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1059, 45, 80, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1142, 49, 77, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1222, 53, 77, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1336, 59, 56, 1, 17, "KeywordsSection",
+ CellID->1427428552],
+Cell[1395, 62, 45, 1, 70, "Keywords",
+ CellID->1251852827]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1477, 68, 53, 1, 17, "DetailsSection",
+ CellID->307771771],
+Cell[1533, 71, 63, 2, 70, "Details",
+ CellID->795394057],
+Cell[1599, 75, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[1671, 79, 63, 2, 70, "Details",
+ CellID->802101],
+Cell[1737, 83, 71, 2, 70, "Details",
+ CellID->509823116],
+Cell[1811, 87, 61, 2, 70, "Details",
+ CellID->199884516],
+Cell[1875, 91, 61, 2, 70, "Details",
+ CellID->463951815],
+Cell[1939, 95, 61, 2, 70, "Details",
+ CellID->8237523],
+Cell[2003, 99, 78, 2, 70, "Details",
+ CellID->813936640],
+Cell[2084, 103, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2188, 110, 60, 1, 76, "GuideTitle",
  CellID->942062912],
-Cell[957, 36, 56, 1, 70, "GuideAbstract",
- CellID->1],
-Cell[1016, 39, 70, 1, 70, "GuideText",
- CellID->6563834],
-Cell[1089, 42, 77, 1, 70, "GuideText",
- CellID->203374175],
-Cell[1169, 45, 143, 4, 70, "GuideText",
- CellID->62291677],
-Cell[1315, 51, 153, 4, 70, "GuideText",
- CellID->744909051],
-Cell[1471, 57, 81, 1, 70, "GuideText",
- CellID->317643431],
-Cell[1555, 60, 14071, 236, 70, "GuideText",
- CellID->237414273]
+Cell[2251, 113, 50, 1, 25, "GuideAbstract",
+ CellID->2001916300]
 }, Open  ]],
-Cell[15641, 299, 23, 0, 70, "FooterCell"]
+Cell[CellGroupData[{
+Cell[2338, 119, 54, 1, 68, "GuideFunctionsSection",
+ CellID->1866139230],
+Cell[2395, 122, 195, 5, 20, "GuideText",
+ CellID->6563834],
+Cell[2593, 129, 303, 6, 20, "GuideText",
+ CellID->203374175],
+Cell[2899, 137, 211, 5, 34, "GuideText",
+ CellID->62291677],
+Cell[3113, 144, 109, 2, 20, "GuideText",
+ CellID->364238796],
+Cell[3225, 148, 419, 8, 34, "GuideText",
+ CellID->744909051],
+Cell[3647, 158, 355, 7, 20, "GuideText",
+ CellID->317643431],
+Cell[4005, 167, 107, 2, 20, "GuideText",
+ CellID->9683427],
+Cell[4115, 171, 14115, 237, 329, "GuideText",
+ CellID->237414273],
+Cell[CellGroupData[{
+Cell[18255, 412, 48, 1, 26, "GuideDelimiter",
+ CellID->311258892],
+Cell[18306, 415, 71, 1, 23, "InlineGuideFunctionListing",
+ CellID->58033752]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18426, 422, 62, 1, 70, "GuideTutorialsSection",
+ CellID->415694126],
+Cell[18491, 425, 49, 1, 20, "GuideTutorial",
+ CellID->806871991],
+Cell[18543, 428, 50, 1, 20, "GuideTutorial",
+ CellID->1885805579]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18630, 434, 62, 1, 70, "GuideMoreAboutSection",
+ CellID->23220180],
+Cell[18695, 437, 51, 1, 20, "GuideMoreAbout",
+ CellID->1567025153],
+Cell[18749, 440, 50, 1, 20, "GuideMoreAbout",
+ CellID->252299663]
+}, Open  ]],
+Cell[18814, 444, 69, 1, 70, "GuideRelatedLinksSection",
+ CellID->415694148]
 }
 ]
 *)
 
 (* End of internal cache information *)
-
