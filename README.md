@@ -1,3 +1,12 @@
+
+This Project is not updated any more.
+
+Use 
+https://github.com/kmisiunas/ffmpeg-mathematica
+instead, it is much better.
+
+
+
 FFmpegM
 =======
 
