@@ -1,0 +1,115 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3063,        106]
+NotebookOptionsPosition[      2429,         79]
+NotebookOutlinePosition[      2770,         94]
+CellTagsIndexPosition[      2727,         91]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"<<", "FFmpegM`"}]], "Input",
+ CellChangeTimes->{{3.6174392260646267`*^9, 3.6174392320629697`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"tempFile", "=", 
+  "\"\<U:\\\\VSDdata\\\\project.SPP\\\\SPP.Coulb1\\\\SPP019\\\\2014-08-10 \
+19-03-50.633.wmv\>\""}]], "Input",
+ CellChangeTimes->{{3.617439250620031*^9, 3.617439265599888*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ImportFFmpegDuration", "[", "tempFile", "]"}]], "Input",
+ CellChangeTimes->{{3.6174392343240986`*^9, 3.6174392383923316`*^9}, {
+  3.617439314032658*^9, 3.6174393170168285`*^9}}],
+
+Cell[BoxData["\<\"\"\>"], "Output",
+ CellChangeTimes->{3.617439318154894*^9, 3.6174394522805653`*^9, 
+  3.617446967949437*^9, 3.617447112695716*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  RowBox[{
+   RowBox[{"$TemporaryDirectory", "<>", "\"\<\\\\tempFFmpeg.log\>\""}], ",", 
+   "\"\<Text\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.61744699212882*^9, 3.617447081937957*^9}}],
+
+Cell[BoxData["\<\"\"\>"], "Output",
+ CellChangeTimes->{{3.617446995715025*^9, 3.617447018845348*^9}, {
+  3.6174470497361145`*^9, 3.6174470822489743`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  RowBox[{"tempFile", ",", " ", "\"\<FrameRate\>\""}], "]"}]], "Input",
+ CellChangeTimes->{3.6174487093730407`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Import", "::", "format"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot import data as \[NoBreak]\\!\\(\\\"FrameRate\\\"\\)\
+\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/Import\\\", ButtonNote -> \
+\\\"Import::format\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.617448710073081*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.617448710073081*^9}]
+}, Open  ]]
+},
+WindowSize->{784, 911},
+WindowMargins->{{Automatic, 49}, {65, Automatic}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 122, 2, 31, "Input"],
+Cell[683, 24, 217, 4, 52, "Input"],
+Cell[CellGroupData[{
+Cell[925, 32, 201, 3, 31, "Input"],
+Cell[1129, 37, 148, 2, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1314, 44, 230, 5, 31, "Input"],
+Cell[1547, 51, 154, 2, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1738, 58, 154, 3, 31, "Input"],
+Cell[1895, 63, 439, 10, 21, "Message"],
+Cell[2337, 75, 76, 1, 64, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

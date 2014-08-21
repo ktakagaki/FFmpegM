@@ -19,6 +19,12 @@ ImportFFmpeg::usage="Uses FFmpeg backend to import videos.";
 ExportFFmpeg::usage="Uses FFmpeg backend to export videos.";
 
 
+ImportFFmpegDuration::usage="";
+
+
+Options[ImportFFmpegDuration]={FFmpegMTemporaryDirectory -> $TemporaryDirectory};
+
+
 (*Set FFmpegTempDir, input value or default values*)
 If[  Head[FFmpegTempDir]=!="String",
 	If[$FFmpegTempDirDefault==="",
@@ -195,12 +201,26 @@ ExportFFmpeg[args___]:=Message[ExportFFmpeg::invalidArgs,{args}];
 ExportFFmpeg::invalidArgs="Arguments `1` are invalid!";
 
 
+ImportFFmpegDuration[file_]:=
+	Block[{logFile},
+		logFile=$TemporaryDirectory<>"\\tempFFmpeg.log";
+		Run["ffprobe \""<> file <>"\" > \""<> logFile <> "\"" ];
+		Import[ logFile ]
+	];
+
+
+$TemporaryDirectory
+
+
+DirectoryName["hello.bmp"] == ""
+
+
 End[]
 
 EndPackage[]
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Backup*)
 
 
